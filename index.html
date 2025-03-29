@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Message App</title>
+</head>
+<body>
+  <h1>Message App</h1>
+  <button onclick="getMessage()">Get Message</button>
+  <p id="message"></p>
+
+  <script>
+    async function getMessage() {
+      const res = await fetch('https://your-backend-url.com/message');
+      const data = await res.json();
+      document.getElementById('message').innerText = data.message;
+    }
+  </script>
+</body>
+</html>
